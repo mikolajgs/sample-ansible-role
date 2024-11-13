@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include gen64.sample"
+      include_role:
+        name: "gen64.sample"

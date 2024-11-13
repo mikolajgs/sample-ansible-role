@@ -1,0 +1,13 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Register unzip output
+    ansible.builtin.command: unzip
+    register: output
+
+  - name: Verify unzip is installed
+    assert:
+      that:
+        - "'unzip' in output.stdout"
